@@ -13,7 +13,7 @@ export default function EditTopicForm({ id, title, description }) {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+      const res = await fetch(`/api/topics/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
@@ -39,7 +39,7 @@ export default function EditTopicForm({ id, title, description }) {
         value={newTitle}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Task"
       />
 
       <input
@@ -47,11 +47,11 @@ export default function EditTopicForm({ id, title, description }) {
         value={newDescription}
         className="border border-slate-500 px-8 py-2"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Task Description"
       />
 
-      <button className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
-        Update Topic
+      <button className="bg-blue-600 font-bold text-white py-3 px-6 w-fit">
+        Update Task
       </button>
     </form>
   );
